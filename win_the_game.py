@@ -25,19 +25,20 @@ def foo(balls):
         result_storing[str(balls)] = 1.0
         return 1.0
     else:
-        # calc += 1
-        # print('trying to find : {}'.format(balls))
-        # tuple1 = foo((balls[0] - 1, balls[1]))
-        # tuple2 = foo((balls[0], balls[1] - 1))
-        # result_storing[str(balls)] = (
-        #     tuple1[0] + tuple2[0], tuple1[1] + tuple2[1])
-        # return result_storing[str(balls)]
         res = float(balls[0])/float(sum(balls)) + float(balls[1])/float(sum(balls))*float(balls[1]-1)/float(sum(balls)-1)*foo((balls[0], balls[1]-2))
         result_storing[str(balls)] = res
         return res
 
 res = foo((345, 56))
 print(res)
+
+
+# okay so here we are considering two cases :
+# 1. probability of selecting a red ball from total *in the first chance* = r/(r+g)
+# 2. if satyam selects: green [ g/(r+g) ] ; then kunal selects green ball [ (g-1)/(r+g) ]; and then probability of satyam getting the red ball [ dp[r][g-2] ].
+
+# total prob. = p(x1) + p(x2)
+
 # print('%.6f' % (float(res[0])/float(sum(res))))
 # 11306330530781662592, 13619554349494431424
 # for _ in range(int(input())):
