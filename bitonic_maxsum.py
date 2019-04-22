@@ -37,4 +37,6 @@ if __name__ == "__main__":
     print(sum_ret([5, 4, 3, 2, 1, 10, 6]))
     print(sum_ret([3,2,2,4]))
     print(sum_ret([617]))
+    print(sum_ret([80, 60, 30, 40, 20, 10]))
+    print(sum_ret([1, 15, 51, 45, 33, 100, 12, 18, 9]))
 # run time : 0.22 sec
